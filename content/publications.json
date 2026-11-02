@@ -1,0 +1,20 @@
+[
+  {
+    "title": "你的论文标题 / Your publication title",
+    "authors": "Your Name, Coauthor Name",
+    "venue": "期刊或会议名称 · 待替换",
+    "year": 2026,
+    "type": "Journal",
+    "note": "示例条目：请替换为真实论文信息。",
+    "links": []
+  },
+  {
+    "title": "另一项研究工作 / Another research contribution",
+    "authors": "Coauthor Name, Your Name",
+    "venue": "期刊或会议名称 · 待替换",
+    "year": 2025,
+    "type": "Conference",
+    "note": "示例条目：可添加 DOI、PDF 和代码链接。",
+    "links": []
+  }
+]
