@@ -1,12 +1,12 @@
 # 个人科研主页
 
-简洁、响应式的静态学术主页，包含 Home、Publications、Blog 和博客文章详情页。所有内容保存在仓库中，无需数据库或付费服务。初始姓名、机构、研究方向与论文均为明确的占位内容。
+简洁、响应式的静态学术主页，包含 Home、Publications、Blog 和博客文章详情页。所有内容保存在仓库中，无需数据库或付费服务。个人资料与论文信息依据用户提供的简历及主页文档整理；照片暂为占位图。未提供 DOI、全文链接或真实博客文章，因此没有添加这些内容。
 
 ## 修改内容
 
 - `content/profile.json`：姓名、简介、单位、研究方向、联系方式、外部链接、近况。email 为空时不显示邮箱。
 - `content/publications.json`：复制一个条目即可增加论文；按年份自动倒序。`links` 示例：`[{"label":"DOI","url":"https://doi.org/你的DOI"},{"label":"Code","url":"https://github.com/你的项目"}]`。
-- `content/posts/*.md`：每个文件为一篇博客。复制示例文章，修改头部 title、date、tag、summary 与正文即可。文件名使用小写英文字母、数字和连字符，例如 `2026-12-01-reading-notes.md`。日期格式 YYYY-MM-DD。当前支持段落、标题、无序列表、粗体、行内代码和 http(s) 链接，HTML 会自动转义。空列表也能正常显示。
+- `content/posts/*.md`：每个文件为一篇博客。新建文件，在正文前添加由 `---` 包围的头部，逐行填写 `title: 标题`、`date: 2026-11-02`、`tag: 随笔`、`summary: 简介`，然后编写正文。文件名使用小写英文字母、数字和连字符，例如 `2026-12-01-reading-notes.md`。日期格式 YYYY-MM-DD。当前支持段落、标题、无序列表、粗体、行内代码和 http(s) 链接，HTML 会自动转义。空列表也能正常显示。
 - `assets/style.css`：颜色、字体和布局；替换照片可修改 `scripts/build.py` 中的 portrait 模板，并将图片放入 assets。
 
 ## 本地预览
