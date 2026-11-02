@@ -9,14 +9,24 @@ OUT.mkdir()
 shutil.copytree(ROOT / 'assets', OUT / 'assets')
 profile = json.loads((ROOT / 'content/profile.json').read_text())
 pubs = json.loads((ROOT / 'content/publications.json').read_text())
+site = json.loads((ROOT / 'content/site.json').read_text()) if (ROOT / 'content/site.json').exists() else {}
 def esc(value): return html.escape(str(value), quote=True)
 def link(item):
     url = item['url']
     if not url.startswith(('https://', 'http://', 'mailto:')): raise ValueError('Unsupported link URL')
     return f'<a href="{esc(url)}">{esc(item["label"])} ↗</a>'
 def layout(title, current, content, prefix=''):
+    description = site.get('description') or profile['intro'].strip() or 'Academic website of '+profile['name']
+    page = {'home':'', 'publications':'publications.html', 'blog':'blog.html'}.get(current, '')
+    canonical = site.get('url', '').rstrip('/')+'/'+page
+    metadata = ''
+    if site.get('url') and not prefix and current:
+        metadata = f'<link rel="canonical" href="{esc(canonical)}"><meta property="og:url" content="{esc(canonical)}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} · {esc(profile["name"])}"><meta property="og:description" content="{esc(description)}">'
+    if current == 'home':
+        person = {'@context':'https://schema.org','@type':'Person','name':profile['name'],'url':site.get('url',''),'jobTitle':profile['role'],'sameAs':[i['url'] for i in profile['links']]}
+        metadata += '<script type="application/ld+json">'+json.dumps(person).replace('<', '\\u003c')+'</script>'
     nav = ''.join(f'<a href="{prefix}{file}"'+(' aria-current="page"' if current == key else '')+f'>{label}</a>' for key,file,label in [('home','index.html','Home'),('publications','publications.html','Publications'),('blog','blog.html','Blog')])
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{esc(profile['intro'])}"><title>{esc(title)} · {esc(profile['name'])}</title><link rel="stylesheet" href="{prefix}assets/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23416950'/%3E%3C/svg%3E"></head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><header><nav aria-label="Main navigation">{nav}</nav></header><main id="main">{content}</main><footer><span>© {date.today().year} {esc(profile['name'])}</span><span class="footer-mark">RESEARCH · NOTES · IDEAS</span></footer></div></body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{esc(description)}">{metadata}<title>{esc(title)} · {esc(profile['name'])}</title><link rel="stylesheet" href="{prefix}assets/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23416950'/%3E%3C/svg%3E"></head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><header><nav aria-label="Main navigation">{nav}</nav></header><main id="main">{content}</main><footer><span>© {date.today().year} {esc(profile['name'])}</span><span class="footer-mark">RESEARCH · NOTES · IDEAS</span></footer></div></body></html>'''
 def write(path, text):
     # Keep empty fields available to the editor without reserving visual space.
     text = re.sub(r'<p(\s[^>]*)?>(\s*)</p>', lambda m: '<p'+(m[1] or '')+' hidden></p>', text)
@@ -88,4 +98,9 @@ for p in posts:
     write(f'posts/{p["slug"]}.html', layout(p['title'],'blog',f'<article class="article"><a class="back" href="../blog.html">← Back to Blog</a><h1>{esc(p["title"])}</h1><div class="date">{esc(p["date"])} · {esc(p["tag"])}</div>{markdown(p["body"])}</article>','../'))
 write('404.html',layout('Page not found','', '<div class="page-head"><h1>404</h1><p>The page you are looking for could not be found.</p><a class="back" href="index.html">Back to home →</a></div>'))
 write('.nojekyll','')
+if site.get('url'):
+    origin = site['url'].rstrip('/')
+    urls = [origin+'/' if p.name == 'index.html' else origin+'/'+p.relative_to(OUT).as_posix() for p in sorted(OUT.rglob('*.html')) if p.name != '404.html']
+    write('robots.txt', 'User-agent: *\nAllow: /\nSitemap: '+origin+'/sitemap.xml\n')
+    write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(url)+'</loc></url>' for url in urls)+'</urlset>')
 print(f'Built {len(list(OUT.rglob("*.html")))} pages in {OUT}')
