@@ -1,10 +1,9 @@
 {
-  "name": "Your Name",
-  "name_zh": "你的姓名",
-  "role": "Researcher · 研究者",
-  "affiliation": "你的院系 / 研究机构",
-  "intro": "你好，欢迎来到我的学术主页。这里记录我的研究工作、学术发表，以及科研途中的思考与笔记。",
-  "about": "在这里介绍你的研究背景、目前关注的问题，以及希望开展的合作。可以用两到三句话，让初次访问的读者了解你的工作。",
+  "name": "Chenru Hou",
+  "role": "Doctoral Researcher & Research Associate ",
+  "affiliation": "Humboldet Universität Berlin & Berlin Graduate School of social science",
+  "affiliation": "Friedrich-Alexander-Universität Erlangen-Nürnberg"
+  "about": "",
   "interests": ["研究方向一", "研究方向二", "跨学科探索"],
   "email": "",
   "links": [{"label": "GitHub", "url": "https://github.com/chenru-hou"}],
