@@ -27,3 +27,14 @@ python3 -m http.server 8000 --directory dist
 日常更新可直接使用 GitHub 网页编辑 `content/profile.json`（包括教育、研究经历、会议、教学和 Methods）及 `content/publications.json`。论文条目的 `homepage: true` 控制是否显示在主页。
 
 需要单文件私有预览时，运行 `python3 scripts/preview.py`，生成 `private-preview.html` 和 `website-preview.zip`。这些预览文件无需上传到仓库。
+
+## 所见即所得编辑预览
+
+运行 `python3 scripts/build.py` 和 `python3 scripts/preview.py`，打开生成的 `private-preview.html`。点击顶部“开启编辑”，即可直接修改个人介绍、研究方向、教育、研究经历、会议、教学、Methods 和论文文字。“联系方式”可以修改邮箱及现有联系链接。
+
+- “完成编辑”切换回浏览模式，修改仍保留在当前标签页。
+- “撤销”恢复上一次开始编辑某个字段之前的内容。
+- “保存可编辑预览”下载包含全部修改的 HTML 文件，以后打开该文件可继续编辑。请确认下载完成后再关闭标签页。
+- “导出内容”下载 `website-content.json`，可发回聊天协助同步仓库；“导入内容”可恢复此预览导出的数据。
+
+此编辑器仅用于私有预览，不会加入生成的正式网站页面。修改不会自动写入 GitHub 或本地源码；当前版本支持修改现有条目内容。

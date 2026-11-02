@@ -1,0 +1,18 @@
+#preview-editor{position:sticky;top:0;z-index:20;background:#f0f3ed;border-bottom:1px solid #c5d0c0;padding:12px 20px;color:#232d2a;font:13px/1.5 system-ui,sans-serif}
+.editor-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.editor-actions strong{margin-right:8px}
+.editor-actions button{border:1px solid #b4c1ae;border-radius:5px;background:#fff;color:#294b35;padding:7px 12px;cursor:pointer;font:inherit}
+.editor-actions button[aria-pressed=true],#edit-save{background:#416950;color:#fff}
+.editor-actions button:disabled{opacity:.45;cursor:default}
+#edit-status{margin:8px 0 0;color:#536052;font-size:12px}
+#preview-root [contenteditable=true]{outline:1px dashed #8da185;outline-offset:4px;border-radius:2px;cursor:text;min-height:1em;white-space:pre-wrap}
+#preview-root [contenteditable=true]:focus{outline:2px solid #416950;background:#f1f5eb}
+#preview-root [contenteditable=true]:empty:before{content:attr(data-placeholder);color:#889280;font-style:italic}
+#contact-dialog{border:1px solid #b4c1ae;border-radius:8px;background:#f8f7f3;color:#232d2a;width:min(540px,90vw);padding:24px;font:14px/1.6 system-ui,sans-serif}
+#contact-dialog::backdrop{background:#232d2a66}
+#contact-dialog h2{margin-top:0}
+#contact-fields label{display:block;margin:12px 0}
+#contact-fields input{display:block;width:100%;padding:9px;border:1px solid #b4c1ae;border-radius:4px;font:inherit}
+@media print{#preview-editor{display:none}#preview-root [contenteditable]{outline:none}}
+
+#preview-root [data-edit-path]{white-space:pre-wrap}
