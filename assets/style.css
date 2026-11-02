@@ -5,3 +5,10 @@
 
 /* Compact introduction and navigation. */
 header{justify-content:flex-end;height:84px}.hero{grid-template-columns:1fr;gap:0;padding:46px 0}.hero h1{font-size:36px;letter-spacing:-.7px;line-height:1.25;margin:0 0 16px}.intro{max-width:700px}.role{max-width:780px}@media(max-width:700px){header{height:72px}.hero{padding:34px 0}.hero h1{font-size:30px}}
+
+/* Empty optional fields should not reserve space in reading mode. */
+[hidden]{display:none!important}.pub-links:empty{display:none}
+
+.pub .doi{white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
+
+.role a{text-decoration:underline;text-underline-offset:3px;white-space:nowrap}

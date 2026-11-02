@@ -7,7 +7,8 @@
     "type": "Accepted",
     "note": "\n",
     "links": [],
-    "homepage": true
+    "homepage": true,
+    "doi": "https://doi.org/10.1162/EUSO.a.86"
   },
   {
     "title": "Is classroom SES diversity associated with uneven network heterogeneity? Evidence from student networks in Germany",
@@ -22,10 +23,10 @@
   {
     "title": "Does Multidimensional Classroom Diversity Reduce Boundaries among Students? How the Alignment of Social, Ethnic, and Academic Backgrounds Shapes Bridging Friendship Ties",
     "authors": "Chenru Hou, Camilla Rjosk",
-    "venue": "Working paper",
+    "venue": "",
     "year": 0,
     "type": "Working paper",
-    "note": "Working paper.",
+    "note": "",
     "links": [],
     "homepage": true,
     "paper": "Paper 3"
@@ -33,10 +34,10 @@
   {
     "title": "Are Network Heterogeneity and Cross-Faultline Network Ties Associated with Achievement Inequality? Evidence from students' friendship networks in Germany",
     "authors": "",
-    "venue": "Working paper",
+    "venue": "",
     "year": 0,
     "type": "Working paper",
-    "note": "\n",
+    "note": "",
     "links": [],
     "homepage": true,
     "paper": "Paper 4"

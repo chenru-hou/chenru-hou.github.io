@@ -22,6 +22,7 @@
     const value = valueAt(path);
     node.textContent = path.endsWith('.year') && !value ? '—' : String(value ?? '');
     node.contentEditable = editing ? 'true' : 'false';
+    if (node.tagName === 'P') node.hidden = !editing && !String(value ?? '').trim();
   }
   function section(title) { return [...root.querySelectorAll('section')].find(s => s.querySelector('h2')?.textContent === title); }
   function bindEntries(title, key) {
@@ -44,8 +45,11 @@
       let note = paragraphs[2];
       if (!note) { note = document.createElement('p'); body.insertBefore(note, body.querySelector('.pub-links')); }
       note.dataset.note = '';
-      [['.year','year'], ['.type','type'], ['h3','title'], ['p:not(.venue):not([data-note])','authors'], ['.venue','venue'], ['[data-note]','note']].forEach(([selector, field]) => bind(row.querySelector(selector), `publications.${index}.${field}`));
-      note.hidden = !editing && !note.textContent;
+      [['.year','year'], ['.type','type'], ['h3','title'], ['p:not(.venue):not([data-note])','authors'], ['.venue-text','venue'], ['[data-note]','note']].forEach(([selector, field]) => bind(row.querySelector(selector), `publications.${index}.${field}`));
+      // Empty optional publication fields do not need editor placeholders.
+      body.querySelectorAll('p').forEach(node => { node.hidden = !node.textContent.trim(); });
+      const venue = body.querySelector('.venue');
+      if (venue) venue.hidden = !venue.textContent.trim();
     });
   }
   function render() {
@@ -56,6 +60,10 @@
       if (role) {
         role.replaceChildren(document.createElement('span'), document.createElement('br'), document.createElement('span'));
         bind(role.children[0], 'profile.role'); bind(role.children[2], 'profile.affiliation');
+        if (data.profile.affiliation_url) {
+          const a = document.createElement('a'); a.href = data.profile.affiliation_url; a.textContent = 'Website ↗';
+          role.append(document.createTextNode(' · '), a);
+        }
       }
       bind(root.querySelector('.intro'), 'profile.intro'); bind(root.querySelector('.about-grid > p'), 'profile.about');
       root.querySelectorAll('.tag').forEach((tag, i) => bind(tag, `profile.interests.${i}`));

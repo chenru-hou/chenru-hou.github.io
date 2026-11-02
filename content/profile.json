@@ -4,22 +4,22 @@
   "role": "Doctoral Researcher & Research Associate",
   "affiliation": "Humboldt-Universität zu Berlin · BGSS | Friedrich-Alexander-Universität Erlangen-Nürnberg",
   "intro": "\n",
-  "about": "I am a doctoral researcher at HU Berlin and a member of the Berlin Graduate School of Social Sciences (BGSS). My dissertation examines how classroom diversity shapes students' peer networks and, in turn, shapes educational inequality. For instance, I use IQB-Bildungstrend Data, investigate how classroom composition relates to friendship and help-seeking networks, how these relationships bridge or reinforce social boundaries, and how access to peer support is associated with achievement inequality.\n\n\nCurrently I work as research associate at FAU Erlangen Nürnberg as a member of the Startchancen programme. Here we designs and conducts social network data collection across different levels of Germany’s education governance system. Beyond academic research with these network data, we also provide our project partners with evidence about our social network analysis. By mapping connections, identifying key actors, and examining patterns of collaboration, we develop interactive dashboards and tools that make complex organisational structures easier to understand and translate network data into practical insights to support educational governance and practice.\n\n\nBeyond my research, I volunteer as an emergency medical responder (Sanitäterdienst) with Malteser Hilfsdienst Berlin. And I'm training for my first Triathlon in 2027 :) \n\n\nHappy to receive your message if you wanna grab a cafe with me in Berlin via chenru.hou@hu-berlin.de",
+  "about": "I am a doctoral researcher at HU Berlin and a member of the Berlin Graduate School of Social Sciences (BGSS). My dissertation examines how classroom diversity shapes students' peer networks and, in turn, shapes educational inequality. For instance, I use IQB-Bildungstrend Data, investigate how classroom composition relates to friendship and help-seeking networks, how these relationships bridge or reinforce social boundaries, and how access to peer support is associated with achievement inequality.\n\nCurrently I work as research associate at FAU Erlangen Nürnberg as a member of the Startchancen programme. Here we designs and conducts social network data collection across different levels of Germany’s education governance system. Beyond academic research with these network data, we also provide our project partners with evidence about our social network analysis. By mapping connections, identifying key actors, and examining patterns of collaboration, we develop interactive dashboards and tools that make complex organisational structures easier to understand and translate network data into practical insights to support educational governance and practice.\n\nBeyond my research, I volunteer as an emergency medical responder (Sanitäterdienst) with Malteser Hilfsdienst Berlin. And I'm training for my first Triathlon in 2027 :) \n\nHappy to receive your message if you wanna grab a cafe with me in Berlin via chenru.hou@hu-berlin.de",
   "interests": [
     "Educational inequality",
     "Classroom diversity",
     "Peer relationships & social networks",
     "Educational governance"
   ],
-  "email": "chenru.hou@uni-potsdam.de",
+  "email": "chenru.hou@hu-berlin.de",
   "links": [
-    {
-      "label": "GitHub",
-      "url": "https://github.com/chenru-hou"
-    },
     {
       "label": "LinkedIn",
       "url": "https://www.linkedin.com/in/chenru-hou"
+    },
+    {
+      "label": "Strava",
+      "url": "https://www.strava.com/athletes/106251695"
     }
   ],
   "news": [],
@@ -115,5 +115,6 @@
       "institution": "Essen, Germany",
       "detail": "Oral Presentation: Effects of diversity on students’ academic achievement: Multidimensionality and the possible role of students’ cohesion."
     }
-  ]
+  ],
+  "affiliation_url": "https://www.fau.eu/"
 }
