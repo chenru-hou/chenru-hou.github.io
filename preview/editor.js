@@ -36,7 +36,7 @@
     const original = seed.originalPublications || seed.publications;
     const selected = original.map((p, i) => ({p, i}));
     const ordered = currentPage === 'index.html' ? selected.filter(x => x.p.homepage) :
-      [...selected.filter(x => x.p.type === 'Accepted'), ...selected.filter(x => x.p.type === 'Major revision'), ...selected.filter(x => !['Accepted','Major revision'].includes(x.p.type))];
+      [...selected.filter(x => x.p.type === 'Accepted'), ...selected.filter(x => x.p.type.toLowerCase().includes('revision')), ...selected.filter(x => x.p.type !== 'Accepted' && !x.p.type.toLowerCase().includes('revision'))];
     root.querySelectorAll('.pub').forEach((row, n) => {
       const index = ordered[n]?.i; if (index === undefined) return;
       const body = row.children[1];

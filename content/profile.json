@@ -3,8 +3,8 @@
   "name_zh": "",
   "role": "Doctoral Researcher & Research Associate",
   "affiliation": "Humboldt-Universität zu Berlin · BGSS | Friedrich-Alexander-Universität Erlangen-Nürnberg",
-  "intro": "I study educational inequality, classroom diversity, and social networks among students. My research examines how peer relationships connect classroom contexts with student outcomes and educational opportunities.",
-  "about": "I am a doctoral researcher in the sociology of education at Humboldt-Universität zu Berlin and a member of the Berlin Graduate School of Social Sciences (BGSS). My dissertation investigates how multidimensional classroom diversity relates to student outcomes and educational inequality through peer relationships. My research also examines governance structures and networks within Germany’s Startchancen programme.",
+  "intro": "\n",
+  "about": "I am a doctoral researcher at HU Berlin and a member of the Berlin Graduate School of Social Sciences (BGSS). My dissertation examines how classroom diversity shapes students' peer networks and, in turn, shapes educational inequality. For instance, I use IQB-Bildungstrend Data, investigate how classroom composition relates to friendship and help-seeking networks, how these relationships bridge or reinforce social boundaries, and how access to peer support is associated with achievement inequality.\n\n\nCurrently I work as research associate at FAU Erlangen Nürnberg as a member of the Startchancen programme. Here we designs and conducts social network data collection across different levels of Germany’s education governance system. Beyond academic research with these network data, we also provide our project partners with evidence about our social network analysis. By mapping connections, identifying key actors, and examining patterns of collaboration, we develop interactive dashboards and tools that make complex organisational structures easier to understand and translate network data into practical insights to support educational governance and practice.\n\n\nBeyond my research, I volunteer as an emergency medical responder (Sanitäterdienst) with Malteser Hilfsdienst Berlin. And I'm training for my first Triathlon in 2027 :) \n\n\nHappy to receive your message if you wanna grab a cafe with me in Berlin via chenru.hou@hu-berlin.de",
   "interests": [
     "Educational inequality",
     "Classroom diversity",
@@ -48,13 +48,13 @@
       "date": "Research",
       "title": "Startchancen Programme",
       "institution": "Friedrich-Alexander-Universität Erlangen-Nürnberg · Educational Governance and Educational Change",
-      "detail": "Research on governance structures and networks, with a focus on organisational connections and collaboration in school education."
+      "detail": "\n"
     },
     {
       "date": "Dec 2021 – Dec 2025",
       "title": "Research Associate · MuHiK",
       "institution": "IQB (Dec 2021 – Apr 2023); University of Potsdam (Apr 2023 – Dec 2025)",
-      "detail": "Worked on the BMBF-funded project on multidimensional classroom heterogeneity: measurement, effects, and mechanisms. Responsibilities included data analysis, coordination of two meta-analyses, supervision of student assistants, visualisation, project reporting, and research communication."
+      "detail": "\n"
     }
   ],
   "methods": "Social network analysis (SAOM, ERGM), multilevel modelling, longitudinal analysis, structural equation modelling, and causal inference. I use R and RStudio for reproducible analysis, data management, and visualisation, with experience working with IQB-Bildungstrend, NEPS, and ESS data.",
@@ -68,52 +68,52 @@
   ],
   "conferences": [
     {
-      "date": "2026",
+      "date": "Oct 2026",
       "title": "DGNet Conference",
       "institution": "Darmstadt, Germany",
-      "detail": "Konzentrieren sich multifunktionale Beziehungen bei zentralen Akteur:innen? Befunde aus einem Netzwerk der Bildungsgovernance in Deutschland"
+      "detail": "Oral Presentation: Konzentrieren sich multifunktionale Beziehungen bei zentralen Akteur:innen? Befunde aus einem Netzwerk der Bildungsgovernance in Deutschland"
     },
     {
-      "date": "18–21 Aug 2026",
-      "title": "European Conference on Educational Research (ECER)",
-      "institution": "Tampere, Finland",
-      "detail": "Is classroom SES diversity associated with uneven network heterogeneity? Evidence from student networks in Germany"
+      "date": "Aug 2026",
+      "title": "European Conference on Educational Research (EARA)",
+      "institution": "Utrecht, the Netherlands",
+      "detail": "Oral Presentation: Is classroom SES diversity associated with uneven network heterogeneity? Evidence from student networks in Germany"
     },
     {
-      "date": "1–3 Jul 2026",
+      "date": "Jul 2026",
       "title": "18th Annual Conference of the International Network of Analytical Sociology (INAS)",
       "institution": "Oxford, United Kingdom",
-      "detail": "Is classroom SES diversity associated with uneven network heterogeneity? Evidence from student networks in Germany"
+      "detail": "Oral Presentation: Is classroom SES diversity associated with uneven network heterogeneity? Evidence from student networks in Germany"
     },
     {
       "date": "Sep 2025",
       "title": "ECSR Annual Conference 2025",
       "institution": "Cologne, Germany",
-      "detail": ""
+      "detail": "Oral Presentation: Does Multidimensional Classroom Diversity Reduce Boundaries among Students? How the Alignment of Social, Ethnic, and Academic Backgrounds Shapes Bridging Friendship Ties."
     },
     {
       "date": "Aug 2024",
       "title": "16th European Sociological Association Conference",
       "institution": "Porto, Portugal",
-      "detail": "Does Multidimensional Classroom Diversity Reduce Boundaries among Students? How the Alignment of Social, Ethnic, and Academic Backgrounds Shapes Bridging Friendship Ties."
+      "detail": "Oral Presentation: Does Multidimensional Classroom Diversity Reduce Boundaries among Students? How the Alignment of Social, Ethnic, and Academic Backgrounds Shapes Bridging Friendship Ties."
     },
     {
       "date": "May 2024",
       "title": "ISA RC28 Spring Meeting",
       "institution": "Shanghai, China",
-      "detail": "Is Socioeconomic Diversity in Classrooms Associated with Reduced Socioeconomic Inequality? The Role of Inter-SES Help-seeking in Classroom Networks."
+      "detail": "Oral Presentation: Is Socioeconomic Diversity in Classrooms Associated with Reduced Socioeconomic Inequality? The Role of Inter-SES Help-seeking in Classroom Networks."
     },
     {
       "date": "Aug 2023",
       "title": "4th Cultural Diversity, Migration, and Education Conference",
       "institution": "Halle (Saale), Germany",
-      "detail": "Multidimensional diversity within classrooms and educational inequality: Socioeconomic segregation in students’ helping networks."
+      "detail": "Oral Presentation: Multidimensional diversity within classrooms and educational inequality: Socioeconomic segregation in students’ helping networks."
     },
     {
       "date": "Feb 2023",
       "title": "10th GEBF Conference",
       "institution": "Essen, Germany",
-      "detail": "Effects of diversity on students’ academic achievement: Multidimensionality and the possible role of students’ cohesion."
+      "detail": "Oral Presentation: Effects of diversity on students’ academic achievement: Multidimensionality and the possible role of students’ cohesion."
     }
   ]
 }
