@@ -6,7 +6,18 @@
     "year": 2026,
     "type": "Accepted",
     "note": "Accepted for publication.",
-    "links": []
+    "links": [],
+    "homepage": true
+  },
+  {
+    "title": "Is classroom SES diversity associated with uneven network heterogeneity? Evidence from student networks in Germany",
+    "authors": "Chenru Hou, Georg Lorenz, Camilla Rjosk",
+    "venue": "British Journal of Sociology of Education",
+    "year": 0,
+    "type": "Major revision",
+    "note": "",
+    "links": [],
+    "homepage": true
   },
   {
     "title": "Does Multidimensional Classroom Diversity Reduce Boundaries among Students? How the Alignment of Social, Ethnic, and Academic Backgrounds Shapes Bridging Friendship Ties",
@@ -14,8 +25,21 @@
     "venue": "Working paper",
     "year": 0,
     "type": "Working paper",
-    "note": "",
-    "links": []
+    "note": "Working paper.",
+    "links": [],
+    "homepage": true,
+    "paper": "Paper 3"
+  },
+  {
+    "title": "Friendship Networks and Achievement Inequality",
+    "authors": "",
+    "venue": "Working paper",
+    "year": 0,
+    "type": "Working paper",
+    "note": "Paper 4 · Working title. Examines friendship-network SES heterogeneity, cross-faultline ties, and achievement inequality.",
+    "links": [],
+    "homepage": true,
+    "paper": "Paper 4"
   },
   {
     "title": "Bridging Socioeconomic Divides: How Classroom Diversity Shapes Youth Network Heterogeneity",

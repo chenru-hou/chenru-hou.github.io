@@ -3,13 +3,13 @@
   "name_zh": "",
   "role": "Doctoral Researcher & Research Associate",
   "affiliation": "Humboldt-Universität zu Berlin · BGSS | Friedrich-Alexander-Universität Erlangen-Nürnberg",
-  "intro": "我关注教育不平等、课堂多样性，以及学生之间的社会网络。我的研究探讨同伴关系如何连接课堂环境、学生表现与教育机会。",
-  "about": "我在柏林洪堡大学攻读教育社会学博士，是 Berlin Graduate School of Social Sciences（BGSS）成员。我的博士研究从同伴关系的视角，考察课堂中的多维异质性如何与学生表现和教育不平等相关。目前的研究工作还涉及 Startchancen-Programm 中的治理结构与网络。",
+  "intro": "I study educational inequality, classroom diversity, and social networks among students. My research examines how peer relationships connect classroom contexts with student outcomes and educational opportunities.",
+  "about": "I am a doctoral researcher in the sociology of education at Humboldt-Universität zu Berlin and a member of the Berlin Graduate School of Social Sciences (BGSS). My dissertation investigates how multidimensional classroom diversity relates to student outcomes and educational inequality through peer relationships. My research also examines governance structures and networks within Germany’s Startchancen programme.",
   "interests": [
-    "教育不平等",
-    "课堂多样性",
-    "同伴关系与社会网络",
-    "Educational Governance"
+    "Educational inequality",
+    "Classroom diversity",
+    "Peer relationships & social networks",
+    "Educational governance"
   ],
   "email": "chenru.hou@uni-potsdam.de",
   "links": [
@@ -25,45 +25,95 @@
   "news": [],
   "education": [
     {
-      "date": "2022.08 – 至今",
-      "title": "博士 · 教育社会学",
+      "date": "Aug 2022 – present",
+      "title": "PhD in Sociology of Education",
       "institution": "Humboldt-Universität zu Berlin · BGSS",
-      "detail": "导师：Prof. Dr. Zerrin Salikutluk。博士课题：Impact of Multidimensional Diversity within Classrooms on Student Outcomes and Educational Inequality: Exploration of Mechanisms from Peers Perspective。"
+      "detail": "Supervisor: Prof. Dr. Zerrin Salikutluk. Dissertation working title: Impact of Multidimensional Diversity within Classrooms on Student Outcomes and Educational Inequality: Exploration of Mechanisms from Peers Perspective."
     },
     {
-      "date": "2019.10 – 2021.10",
-      "title": "M.A. · Soziologie – Europäische Gesellschaften",
+      "date": "Oct 2019 – Oct 2021",
+      "title": "M.A. in Sociology – European Societies",
       "institution": "Freie Universität Berlin",
-      "detail": "硕士论文：The Effect of Educational Experiences on Attitudes Toward Justice: Evidence from the 9th round of the European Social Survey (ESS)。"
+      "detail": "Master’s thesis: The Effect of Educational Experiences on Attitudes Toward Justice: Evidence from the 9th round of the European Social Survey (ESS)."
     },
     {
-      "date": "2014.09 – 2018.07",
-      "title": "B.A. · Sociology",
+      "date": "Sep 2014 – Jul 2018",
+      "title": "B.A. in Sociology",
       "institution": "Shanxi Normal University, China",
       "detail": ""
     }
   ],
   "experience": [
     {
-      "date": "研究工作",
-      "title": "Startchancen-Programm",
-      "institution": "Friedrich-Alexander-Universität Erlangen-Nürnberg · Educational Governance und Educational Change",
-      "detail": "研究治理结构与网络，关注学校教育中的组织联系与协作。"
+      "date": "Research",
+      "title": "Startchancen Programme",
+      "institution": "Friedrich-Alexander-Universität Erlangen-Nürnberg · Educational Governance and Educational Change",
+      "detail": "Research on governance structures and networks, with a focus on organisational connections and collaboration in school education."
     },
     {
-      "date": "2021.12 – 2025.12",
-      "title": "研究助理 · MuHiK",
-      "institution": "IQB（2021.12–2023.04）；Universität Potsdam（2023.04–2025.12）",
-      "detail": "参与 BMBF 资助项目“Multidimensionale Heterogenität im Klassenzimmer: Messung, Effekte, Mechanismen”。开展数据分析、两项元分析协调、研究助理指导、结果可视化、项目报告与科研传播。"
+      "date": "Dec 2021 – Dec 2025",
+      "title": "Research Associate · MuHiK",
+      "institution": "IQB (Dec 2021 – Apr 2023); University of Potsdam (Apr 2023 – Dec 2025)",
+      "detail": "Worked on the BMBF-funded project on multidimensional classroom heterogeneity: measurement, effects, and mechanisms. Responsibilities included data analysis, coordination of two meta-analyses, supervision of student assistants, visualisation, project reporting, and research communication."
     }
   ],
-  "methods": "社会网络分析（SAOM、ERGM）、多层模型、纵向分析、结构方程模型与因果推断；使用 R / RStudio 开展可复现分析、数据管理与可视化。具有 IQB-Bildungstrend、NEPS 和 ESS 大规模数据分析经验。",
+  "methods": "Social network analysis (SAOM, ERGM), multilevel modelling, longitudinal analysis, structural equation modelling, and causal inference. I use R and RStudio for reproducible analysis, data management, and visualisation, with experience working with IQB-Bildungstrend, NEPS, and ESS data.",
   "teaching": [
     {
-      "date": "2024 夏季学期",
+      "date": "Summer semester 2024",
       "title": "Researching educational inequality with large-scale data",
-      "institution": "Universität Leipzig · 本科课程",
-      "detail": "课程涵盖教育不平等研究、大规模数据、回归与多层分析、因果推断和跨国比较，结合实证阅读与数据实践。"
+      "institution": "Leipzig University · Undergraduate seminar",
+      "detail": "A methods-focused course combining empirical research and practical data analysis. Topics included educational inequality, large-scale data, regression and multilevel analysis, causal inference, and cross-national comparisons."
+    }
+  ],
+  "conferences": [
+    {
+      "date": "2026",
+      "title": "DGNet Conference",
+      "institution": "Darmstadt, Germany",
+      "detail": "Konzentrieren sich multifunktionale Beziehungen bei zentralen Akteur:innen? Befunde aus einem Netzwerk der Bildungsgovernance in Deutschland"
+    },
+    {
+      "date": "18–21 Aug 2026",
+      "title": "European Conference on Educational Research (ECER)",
+      "institution": "Tampere, Finland",
+      "detail": "Is classroom SES diversity associated with uneven network heterogeneity? Evidence from student networks in Germany"
+    },
+    {
+      "date": "1–3 Jul 2026",
+      "title": "18th Annual Conference of the International Network of Analytical Sociology (INAS)",
+      "institution": "Oxford, United Kingdom",
+      "detail": "Is classroom SES diversity associated with uneven network heterogeneity? Evidence from student networks in Germany"
+    },
+    {
+      "date": "Sep 2025",
+      "title": "ECSR Annual Conference 2025",
+      "institution": "Cologne, Germany",
+      "detail": ""
+    },
+    {
+      "date": "Aug 2024",
+      "title": "16th European Sociological Association Conference",
+      "institution": "Porto, Portugal",
+      "detail": "Does Multidimensional Classroom Diversity Reduce Boundaries among Students? How the Alignment of Social, Ethnic, and Academic Backgrounds Shapes Bridging Friendship Ties."
+    },
+    {
+      "date": "May 2024",
+      "title": "ISA RC28 Spring Meeting",
+      "institution": "Shanghai, China",
+      "detail": "Is Socioeconomic Diversity in Classrooms Associated with Reduced Socioeconomic Inequality? The Role of Inter-SES Help-seeking in Classroom Networks."
+    },
+    {
+      "date": "Aug 2023",
+      "title": "4th Cultural Diversity, Migration, and Education Conference",
+      "institution": "Halle (Saale), Germany",
+      "detail": "Multidimensional diversity within classrooms and educational inequality: Socioeconomic segregation in students’ helping networks."
+    },
+    {
+      "date": "Feb 2023",
+      "title": "10th GEBF Conference",
+      "institution": "Essen, Germany",
+      "detail": "Effects of diversity on students’ academic achievement: Multidimensionality and the possible role of students’ cohesion."
     }
   ]
 }
