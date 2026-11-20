@@ -116,5 +116,19 @@
       "detail": "Oral Presentation: Effects of diversity on students’ academic achievement: Multidimensionality and the possible role of students’ cohesion."
     }
   ],
-  "affiliation_url": "https://www.paedagogik.phil.fau.de/person/chenru-hou/"
+  "affiliation_url": "https://www.paedagogik.phil.fau.de/person/chenru-hou/",
+  "transfer": [
+    {
+      "date": "June 2026",
+      "title": "Multidimensional Classroom Heterogeneity: Effects and Mechanisms",
+      "institution": "SFBB · Professional conference for primary schools in the Berlin programme “Youth Social Work at Berlin Schools”",
+      "detail": "Forum at “Embracing Diversity, Enabling Participation” (Vielfalt leben – Teilhabe ermöglichen)."
+    },
+    {
+      "date": "27 February 2026",
+      "title": "Interactive Practice Conference: Classroom Heterogeneity",
+      "institution": "University of Potsdam · Golm Campus, Potsdam, Germany",
+      "detail": "Research–practice exchange on findings from the MuHiK project and their implications for addressing classroom diversity."
+    }
+  ]
 }

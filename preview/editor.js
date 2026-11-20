@@ -24,7 +24,7 @@
     node.contentEditable = editing ? 'true' : 'false';
     if (node.tagName === 'P') node.hidden = !editing && !String(value ?? '').trim();
   }
-  function section(title) { return [...root.querySelectorAll('section')].find(s => s.querySelector('h2')?.textContent === title); }
+  function section(title) { return [...root.querySelectorAll('section')].find(s => s.querySelector('h2')?.textContent === title || s.getAttribute('aria-label') === title); }
   function bindEntries(title, key) {
     (section(title)?.querySelectorAll('.vita-row') || []).forEach((row, i) => {
       for (const [selector, field] of [['.date','date'], ['h3','title'], ['.institution','institution'], ['p:not(.institution)','detail']])
@@ -36,8 +36,10 @@
     const seed = JSON.parse(document.getElementById('preview-data').textContent);
     const original = seed.originalPublications || seed.publications;
     const selected = original.map((p, i) => ({p, i}));
-    const ordered = currentPage === 'index.html' ? selected.filter(x => x.p.homepage) :
-      [...selected.filter(x => x.p.type === 'Accepted'), ...selected.filter(x => x.p.type.toLowerCase().includes('revision')), ...selected.filter(x => x.p.type !== 'Accepted' && !x.p.type.toLowerCase().includes('revision'))];
+    const published = p => ['accepted', 'published'].includes(p.type.trim().toLowerCase());
+    const rank = p => published(p) ? -1 : p.type.toLowerCase().includes('revision') ? 0 : p.type.toLowerCase().includes('review') ? 1 : 2;
+    const sorted = [...selected].sort((a, b) => rank(a.p) - rank(b.p));
+    const ordered = currentPage === 'index.html' ? sorted.filter(x => x.p.homepage) : sorted;
     root.querySelectorAll('.pub').forEach((row, n) => {
       const index = ordered[n]?.i; if (index === undefined) return;
       const body = row.children[1];
@@ -77,7 +79,8 @@
       }
     }
     bindEntries('Education', 'education'); bindEntries('Research experience', 'experience');
-    bindEntries('Conferences', 'conferences'); bindEntries('Teaching', 'teaching');
+    bindEntries('Conference', 'conferences'); bindEntries('Teaching', 'teaching');
+    bindEntries('Knowledge Transfer', 'transfer');
     if (['index.html','publications.html'].includes(currentPage)) bindPapers();
     const copyright = root.querySelector('footer > span');
     if (copyright) copyright.textContent = `© ${new Date().getFullYear()} ${data.profile.name}`;

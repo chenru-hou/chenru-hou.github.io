@@ -12,3 +12,9 @@ header{justify-content:flex-end;height:84px}.hero{grid-template-columns:1fr;gap:
 .pub .doi{white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
 
 .role a{text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+
+/* Academic activities index and narrow navigation. */
+.activity-index{display:flex;flex-wrap:wrap;gap:12px 24px;margin:24px 0 8px}
+.activity-index a{color:var(--green);font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.section[id]{scroll-margin-top:24px}
+@media(max-width:420px){header{height:auto;min-height:72px;padding:12px 0}header nav{flex-wrap:wrap;justify-content:flex-end;column-gap:16px;row-gap:0}}

@@ -17,7 +17,7 @@ def link(item):
     return f'<a href="{esc(url)}">{esc(item["label"])} ↗</a>'
 def layout(title, current, content, prefix=''):
     description = site.get('description') or profile['intro'].strip() or 'Academic website of '+profile['name']
-    page = {'home':'', 'publications':'publications.html', 'conference':'conference.html', 'blog':'blog.html'}.get(current, '')
+    page = {'home':'', 'publications':'publications.html', 'conference':'conference.html', 'teaching':'teaching.html', 'education':'education.html', 'blog':'blog.html'}.get(current, '')
     canonical = site.get('url', '').rstrip('/')+'/'+page
     metadata = ''
     if site.get('url') and not prefix and current:
@@ -25,7 +25,8 @@ def layout(title, current, content, prefix=''):
     if current == 'home':
         person = {'@context':'https://schema.org','@type':'Person','name':profile['name'],'url':site.get('url',''),'jobTitle':profile['role'],'sameAs':[i['url'] for i in profile['links']]}
         metadata += '<script type="application/ld+json">'+json.dumps(person).replace('<', '\\u003c')+'</script>'
-    nav = ''.join(f'<a href="{prefix}{file}"'+(' aria-current="page"' if current == key else '')+f'>{label}</a>' for key,file,label in [('home','index.html','Home'),('publications','publications.html','Publications'),('conference','conference.html','Conference'),('blog','blog.html','Blog')])
+    nav_current = 'conference' if current in ('teaching', 'education') else current
+    nav = ''.join(f'<a href="{prefix}{file}"'+(' aria-current="page"' if nav_current == key else '')+f'>{label}</a>' for key,file,label in [('home','index.html','Home'),('publications','publications.html','Publications'),('conference','conference.html','Academic activities'),('blog','blog.html','Blog')])
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{esc(description)}">{metadata}<title>{esc(title)} · {esc(profile['name'])}</title><link rel="stylesheet" href="{prefix}assets/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23416950'/%3E%3C/svg%3E"></head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><header><nav aria-label="Main navigation">{nav}</nav></header><main id="main">{content}</main><footer><span>© {date.today().year} {esc(profile['name'])}</span><span class="footer-mark">RESEARCH · NOTES · IDEAS</span></footer></div></body></html>'''
 def write(path, text):
     # Keep empty fields available to the editor without reserving visual space.
@@ -76,25 +77,45 @@ def post_row(p):
 social=''.join(link(i) for i in profile['links'])
 if profile.get('email'): social=link({'label':'Email','url':'mailto:'+profile['email']})+social
 portrait='''<div class="portrait" role="img" aria-label="Portrait placeholder"><svg viewBox="0 0 160 180" fill="none" aria-hidden="true"><circle cx="80" cy="57" r="32" stroke="currentColor" stroke-width="1.2"/><path d="M18 166c0-45 24-65 62-65s62 20 62 65" stroke="currentColor" stroke-width="1.2"/><circle cx="80" cy="84" r="69" stroke="currentColor" stroke-opacity=".2"/><path d="M0 166h160" stroke="currentColor" stroke-opacity=".4"/></svg><span>YOUR PORTRAIT</span></div>'''
-def entries(title, items):
+def entries(title, items, section_id='', show_title=True):
     if not items: return ''
     rows = ''.join(f'<article class="vita-row"><div class="date">{esc(x["date"])}</div><div><h3>{esc(x["title"])}</h3><p class="institution">{esc(x["institution"])}</p><p>{esc(x["detail"])}</p></div></article>' for x in items)
-    return f'<section class="section"><div class="section-title"><h2>{title}</h2></div>{rows}</section>'
+    anchor = f' id="{esc(section_id)}"' if section_id else ''
+    heading = f'<div class="section-title"><h2>{esc(title)}</h2></div>' if show_title else ''
+    return f'<section class="section"{anchor} aria-label="{esc(title)}">{heading}{rows}</section>'
 affiliation_link = ' · '+link({'label':'Website','url':profile['affiliation_url']}) if profile.get('affiliation_url') else ''
 def homepage_paper(p):
     status = p['type'].strip().lower()
     return status in ('accepted', 'published') or 'revision' in status or 'review' in status
-home=f'''<section class="hero"><div><h1>{esc(profile['name'])}</h1><div class="role">{esc(profile['role'])}<br>{esc(profile['affiliation'])}{affiliation_link}</div><p class="intro">{esc(profile['intro'])}</p><div class="social">{social}</div></div></section><section class="section"><div class="section-title"><h2>About me</h2></div><div class="about-grid"><p>{esc(profile['about'])}</p><div class="research-interests"><div class="eyebrow">CURIOSITY DRIVES RESEARCH</div><div class="tags">{''.join('<span class="tag">'+esc(i)+'</span>' for i in profile['interests'])}</div></div></div></section><section class="section"><div class="section-title"><h2>Published &amp; under-review papers</h2><a href="publications.html">All publications</a></div>{''.join(pub_html(p) for p in pubs if homepage_paper(p))}</section>'''
+def published_paper(p):
+    return p['type'].strip().lower() in ('accepted', 'published')
+def working_paper_order(p):
+    status = p['type'].strip().lower()
+    return 0 if 'revision' in status else 1 if 'review' in status else 2
+published_papers = [p for p in pubs if published_paper(p)]
+working_papers = sorted((p for p in pubs if not published_paper(p)), key=working_paper_order)
+ordered_papers = published_papers + working_papers
+home=f'''<section class="hero"><div><h1>{esc(profile['name'])}</h1><div class="role">{esc(profile['role'])}<br>{esc(profile['affiliation'])}{affiliation_link}</div><p class="intro">{esc(profile['intro'])}</p><div class="social">{social}</div></div></section><section class="section"><div class="section-title"><h2>About me</h2></div><div class="about-grid"><p>{esc(profile['about'])}</p><div class="research-interests"><div class="eyebrow">CURIOSITY DRIVES RESEARCH</div><div class="tags">{''.join('<span class="tag">'+esc(i)+'</span>' for i in profile['interests'])}</div></div></div></section><section class="section"><div class="section-title"><h2>Published &amp; under-review papers</h2><a href="publications.html">All publications</a></div>{''.join(pub_html(p) for p in ordered_papers if homepage_paper(p))}</section>'''
 if profile.get('methods'):
     home += '<section class="section"><div class="section-title"><h2>Methods</h2></div><p>'+esc(profile['methods'])+'</p></section>'
 write('index.html', layout('Home', 'home', home))
-conference = '<div class="page-head"><div class="eyebrow">ACADEMIC ACTIVITIES</div><h1>Conference</h1></div>'
-conference += entries('Conferences', profile.get('conferences', []))
-conference += entries('Education', profile.get('education', []))
-conference += entries('Research experience', profile.get('experience', []))
-conference += entries('Teaching', profile.get('teaching', []))
-write('conference.html', layout('Conference', 'conference', conference))
-write('publications.html', layout('Publications','publications','<div class="page-head"><div class="eyebrow">RESEARCH OUTPUT</div><h1>Publications</h1><p>Research on classroom diversity, peer networks, and educational inequality.</p></div>'+('<h2 class="pub-group">Accepted publications</h2>'+''.join(pub_html(p) for p in pubs if p['type'] == 'Accepted')+'<h2 class="pub-group">Manuscripts in revision</h2>'+''.join(pub_html(p) for p in pubs if 'revision' in p['type'].lower())+'<h2 class="pub-group">Working papers & manuscripts under review</h2>'+''.join(pub_html(p) for p in pubs if p['type'] != 'Accepted' and 'revision' not in p['type'].lower()) or '<p class="empty">Publication details coming soon.</p>')))
+activities = '<div class="page-head"><h1>Academic activities</h1><nav class="activity-index" aria-label="Academic activities index"><a href="#conference">Conference</a><a href="teaching.html">Teaching</a><a href="education.html">Education</a><a href="#transfer">Transfer</a></nav></div>'
+activities += entries('Conference', profile.get('conferences', []), 'conference', False)
+activities += entries('Knowledge Transfer', profile.get('transfer', []), 'transfer')
+activities += entries('Research experience', profile.get('experience', []))
+write('conference.html', layout('Academic activities', 'conference', activities))
+teaching = '<div class="page-head"><h1>Teaching</h1><a class="back" href="conference.html">Academic activities</a></div>'
+teaching += entries('Teaching', profile.get('teaching', []), show_title=False)
+write('teaching.html', layout('Teaching', 'teaching', teaching))
+education = '<div class="page-head"><h1>Education</h1><a class="back" href="conference.html">Academic activities</a></div>'
+education += entries('Education', profile.get('education', []), show_title=False)
+write('education.html', layout('Education', 'education', education))
+publication_content = '<div class="page-head"><h1>Publications</h1></div>'
+if published_papers:
+    publication_content += '<h2 class="pub-group">Accepted publications</h2>' + ''.join(pub_html(p) for p in published_papers)
+if working_papers:
+    publication_content += '<h2 class="pub-group">Working papers</h2>' + ''.join(pub_html(p) for p in working_papers)
+write('publications.html', layout('Publications', 'publications', publication_content))
 write('blog.html',layout('Blog','blog','<div class="page-head"><div class="eyebrow">NOTES ALONG THE WAY</div><h1>Blog</h1><p>Questions, ideas, and discoveries from the research process.</p></div>'+(''.join(post_row(p) for p in posts) or '<p class="empty">New posts coming soon.</p>')))
 for p in posts:
     write(f'posts/{p["slug"]}.html', layout(p['title'],'blog',f'<article class="article"><a class="back" href="../blog.html">← Back to Blog</a><h1>{esc(p["title"])}</h1><div class="date">{esc(p["date"])} · {esc(p["tag"])}</div>{markdown(p["body"])}</article>','../'))

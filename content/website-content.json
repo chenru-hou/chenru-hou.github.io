@@ -116,6 +116,20 @@
         "institution": "Essen, Germany",
         "detail": "Oral Presentation: Effects of diversity on students’ academic achievement: Multidimensionality and the possible role of students’ cohesion."
       }
+    ],
+    "transfer": [
+      {
+        "date": "June 2026",
+        "title": "Multidimensional Classroom Heterogeneity: Effects and Mechanisms",
+        "institution": "SFBB · Professional conference for primary schools in the Berlin programme “Youth Social Work at Berlin Schools”",
+        "detail": "Forum at “Embracing Diversity, Enabling Participation” (Vielfalt leben – Teilhabe ermöglichen)."
+      },
+      {
+        "date": "27 February 2026",
+        "title": "Interactive Practice Conference: Classroom Heterogeneity",
+        "institution": "University of Potsdam · Golm Campus, Potsdam, Germany",
+        "detail": "Research–practice exchange on findings from the MuHiK project and their implications for addressing classroom diversity."
+      }
     ]
   },
   "publications": [
@@ -127,7 +141,8 @@
       "type": "Accepted",
       "note": "\n",
       "links": [],
-      "homepage": true
+      "homepage": true,
+      "doi": "https://doi.org/10.1162/EUSO.a.86"
     },
     {
       "title": "Is classroom SES diversity associated with uneven network heterogeneity? Evidence from student networks in Germany",
@@ -140,35 +155,15 @@
       "homepage": true
     },
     {
-      "title": "Does Multidimensional Classroom Diversity Reduce Boundaries among Students? How the Alignment of Social, Ethnic, and Academic Backgrounds Shapes Bridging Friendship Ties",
-      "authors": "Chenru Hou, Camilla Rjosk",
-      "venue": "Working paper",
-      "year": 0,
-      "type": "Working paper",
-      "note": "Working paper.",
-      "links": [],
-      "homepage": true,
-      "paper": "Paper 3"
-    },
-    {
-      "title": "Are Network Heterogeneity and Cross-Faultline Network Ties Associated with Achievement Inequality? Evidence from students' friendship networks in Germany",
-      "authors": "",
-      "venue": "Working paper",
-      "year": 0,
-      "type": "Working paper",
-      "note": "\n",
+      "title": "Are socioeconomic heterogeneity in networks and cross-faultline friendships associated with achievement inequality? Evidence from school students in Germany",
+      "authors": "Chenru Hou, Georg Lorenz, Camilla Rjosk",
+      "venue": "Social Sciences",
+      "year": 2026,
+      "type": "Under review",
+      "note": "",
       "links": [],
       "homepage": true,
       "paper": "Paper 4"
-    },
-    {
-      "title": "Bridging Socioeconomic Divides: How Classroom Diversity Shapes Youth Network Heterogeneity",
-      "authors": "Chenru Hou, Camilla Rjosk, Georg Lorenz",
-      "venue": "Working paper",
-      "year": 0,
-      "type": "Working paper",
-      "note": "",
-      "links": []
     },
     {
       "title": "Classroom heterogeneity effects in education: a theoretical framework",
@@ -177,20 +172,23 @@
       "year": 0,
       "type": "Under review",
       "note": "",
-      "links": []
+      "links": [],
+      "homepage": true
     },
     {
-      "title": "The impact of school and classroom heterogeneity on psycho-social student outcomes: A theoretical integration and systematic review",
-      "authors": "Claudia Neuendorf, Svenja Hascher, Chenru Hou, Georg Lorenz, Camilla Rjosk",
-      "venue": "Working paper",
+      "title": "Does Multidimensional Classroom Diversity Reduce Boundaries among Students? How the Alignment of Social, Ethnic, and Academic Backgrounds Shapes Bridging Friendship Ties",
+      "authors": "Chenru Hou, Camilla Rjosk",
+      "venue": "",
       "year": 0,
       "type": "Working paper",
       "note": "",
-      "links": []
+      "links": [],
+      "homepage": false,
+      "paper": "Paper 3"
     },
     {
-      "title": "Effects of achievement heterogeneity in classrooms and schools on individual student achievement: a meta-analytic review",
-      "authors": "Camilla Rjosk, Georg Lorenz, Claudia Neuendorf, Svenja Hascher, Chenru Hou",
+      "title": "Bridging Socioeconomic Divides: How Classroom Diversity Shapes Youth Network Heterogeneity",
+      "authors": "Chenru Hou, Camilla Rjosk, Georg Lorenz",
       "venue": "Working paper",
       "year": 0,
       "type": "Working paper",
