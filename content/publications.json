@@ -28,7 +28,7 @@
     "type": "Working paper",
     "note": "",
     "links": [],
-    "homepage": true,
+    "homepage": false,
     "paper": "Paper 3"
   },
   {
@@ -39,7 +39,7 @@
     "type": "Working paper",
     "note": "",
     "links": [],
-    "homepage": true,
+    "homepage": false,
     "paper": "Paper 4"
   },
   {
@@ -58,7 +58,8 @@
     "year": 0,
     "type": "Under review",
     "note": "",
-    "links": []
+    "links": [],
+    "homepage": true
   },
   {
     "title": "The impact of school and classroom heterogeneity on psycho-social student outcomes: A theoretical integration and systematic review",

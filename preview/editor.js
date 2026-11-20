@@ -67,8 +67,6 @@
       }
       bind(root.querySelector('.intro'), 'profile.intro'); bind(root.querySelector('.about-grid > p'), 'profile.about');
       root.querySelectorAll('.tag').forEach((tag, i) => bind(tag, `profile.interests.${i}`));
-      bindEntries('Education', 'education'); bindEntries('Research experience', 'experience');
-      bindEntries('Conferences', 'conferences'); bindEntries('Teaching', 'teaching');
       bind(section('Methods')?.querySelector('p'), 'profile.methods');
       root.querySelectorAll('.news').forEach((row, i) => { bind(row.querySelector('.date'), `profile.news.${i}.date`); bind(row.querySelector('p'), `profile.news.${i}.text`); });
       const social = root.querySelector('.social');
@@ -78,6 +76,8 @@
         links.forEach(item => { const a = document.createElement('a'); a.textContent = item.label+' ↗'; a.href = item.url; social.append(a); });
       }
     }
+    bindEntries('Education', 'education'); bindEntries('Research experience', 'experience');
+    bindEntries('Conferences', 'conferences'); bindEntries('Teaching', 'teaching');
     if (['index.html','publications.html'].includes(currentPage)) bindPapers();
     const copyright = root.querySelector('footer > span');
     if (copyright) copyright.textContent = `© ${new Date().getFullYear()} ${data.profile.name}`;
